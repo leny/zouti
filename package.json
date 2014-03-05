@@ -1,0 +1,52 @@
+{
+  "name": "zouti",
+  "description": "Useful tools & functions we use on every krkn projects.",
+  "version": "0.0.1-2",
+  "keywords": [
+    "krkn",
+    "tools",
+    "shortcuts",
+    "toolbox"
+  ],
+  "homepage": "https://github.com/krkn/zouti",
+  "author": {
+    "name": "krkn",
+    "email": "info@krkn.be"
+  },
+  "contributors": [
+    {
+      "name": "leny",
+      "email": "leny@krkn.be",
+      "url": "http://leny.me"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/krkn/zouti.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krkn/zouti/issues"
+  },
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "https://github.com/krkn/zouti/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/zouti",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-coffee": "~0.10",
+    "grunt-contrib-jshint": "~0.6",
+    "grunt-contrib-watch": "~0.5",
+    "grunt": "~0.4",
+    "grunt-bumpup": "~0.5",
+    "matchdep": "~0.3",
+    "grunt-coffeelint": "0.0"
+  },
+  "dependencies": {
+    "cli-color": "~0.2"
+  }
+}
