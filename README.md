@@ -1,4 +1,4 @@
-# zouti [![Build Status](https://secure.travis-ci.org/krkn/zouti.png?branch=master)](http://travis-ci.org/krkn/zouti)
+# zouti [![NPM version](https://badge.fury.io/js/zouti.png)](http://badge.fury.io/js/zouti)
 
 Useful tools & functions we use on every krkn projects.
 
