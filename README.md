@@ -1,4 +1,6 @@
-# zouti [![Build Status](https://secure.travis-ci.org/krkn/zouti.png?branch=master)](http://travis-ci.org/krkn/zouti)
+# zouti 
+
+![NPM version](http://img.shields.io/npm/v/zouti.svg) ![Dependency Status](https://david-dm.org/krkn/zouti.svg) ![Downloads counter](http://img.shields.io/npm/dm/zouti.svg)
 
 Useful tools & functions we use on every krkn projects.
 
