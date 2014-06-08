@@ -27,10 +27,11 @@ The `type` parameter is a `String` which can be :
 * `"MAGENTA"` : print the message in magenta
 * every other values prints the message in cyan
 
-### zouti.bench( name )
+### zouti.bench( name, log )
 
 Called the first time, start a benchmark.  
-When it's called the second time with the same name, stop the benchmark and print elapsed time, in milliseconds.
+When it's called the second time with the same `name`, stop the benchmark and print elapsed time (if the `log` argument is set to true - which is by default), in milliseconds.  
+The second call returns an object with literal and numerical values (in milliseconds).
 
 ### zouti.uuid()
 
@@ -57,6 +58,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 
 * **0.0.1**: initial release (05/03/2014)
+* **0.1.0**: refactor bench method (08/06/2014)
 
 ## License
 Copyright (c) 2014 krkn  
