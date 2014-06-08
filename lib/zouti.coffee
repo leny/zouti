@@ -34,12 +34,15 @@ exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
 
 # Simple bench tools for console.
 oBenches = {}
-exports.bench = bench = ( sName ) ->
+exports.bench = bench = ( sName, bLog = yes ) ->
     return oBenches[ sName ] = process.hrtime() unless oBenches[ sName ]
     iDiff = Math.round( ( ( aEnd = process.hrtime( oBenches[ sName ] ) )[ 0 ] * 1e9 + aEnd[ 1 ] ) / 1000 ) / 1000
     sDiff = if iDiff > 1000 then "#{ Math.round( iDiff / 100 ) / 10 }s" else ( if iDiff > 25 then "#{ Math.round( iDiff ) }ms" else "#{ iDiff }ms" )
-    log "took #{ sDiff }.", ( sName or "TIMER" ), "YELLOW"
+    log "took #{ sDiff }.", ( sName or "TIMER" ), "YELLOW" if bLog
     delete oBenches[ sName ]
+    oDiffs =
+        value: if iDiff > 25 then Math.round( iDiff ) else iDiff
+        literal: sDiff
 
 # Generate an UUID (https://gist.github.com/bmc/1893440) compliant to RFC 4122.
 exports.uuid = uuid = ->
