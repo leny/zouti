@@ -39,13 +39,13 @@
   },
   "devDependencies": {
     "grunt-contrib-coffee": "~0.10",
-    "grunt-contrib-jshint": "~0.6",
-    "grunt-contrib-watch": "~0.5",
+    "grunt-contrib-jshint": "~0.10",
+    "grunt-contrib-watch": "~0.6",
     "grunt": "~0.4",
     "matchdep": "~0.3",
     "grunt-coffeelint": "0.0"
   },
   "dependencies": {
-    "cli-color": "~0.2"
+    "cli-color": "~0.3"
   }
 }
