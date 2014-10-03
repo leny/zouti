@@ -58,7 +58,6 @@ module.exports = ( grunt ) ->
                 node: yes
             lib:
                 src: [ "lib/zouti.js" ]
-        bumpup: "package.json"
         watch:
             lib:
                 files: "lib/zouti.coffee"
@@ -73,6 +72,5 @@ module.exports = ( grunt ) ->
         "coffeelint"
         "coffee"
         "jshint"
-        "bumpup:prerelease"
     ]
 

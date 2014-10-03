@@ -42,7 +42,6 @@
     "grunt-contrib-jshint": "~0.6",
     "grunt-contrib-watch": "~0.5",
     "grunt": "~0.4",
-    "grunt-bumpup": "~0.5",
     "matchdep": "~0.3",
     "grunt-coffeelint": "0.0"
   },
