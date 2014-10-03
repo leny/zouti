@@ -27,6 +27,10 @@ The `type` parameter is a `String` which can be :
 * `"MAGENTA"` : print the message in magenta
 * every other values prints the message in cyan
 
+### zouti.clearConsole()
+
+Clear the console by sending the string `\u001B[2J\u001B[0;0f` to it.
+
 ### zouti.bench( name, log )
 
 Called the first time, start a benchmark.  
@@ -58,7 +62,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 
 * **0.0.1**: initial release (05/03/2014)
-* **0.1.0**: refactor bench method (08/06/2014)
+* **0.1.0**: refactor `bench` method (08/06/2014)
+* **0.2.0**: add `clearConsole` method (03/10/2014)
 
 ## License
 Copyright (c) 2014 krkn  
