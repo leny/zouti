@@ -32,6 +32,10 @@ exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
         else
             console.log "#{ sDatePrefix } - #{ clc.cyan( sMessage ) }"
 
+# Clearing console log messages.
+exports.clearConsole = clearConsole = ->
+    console.log "\u001B[2J\u001B[0;0f"
+
 # Simple bench tools for console.
 oBenches = {}
 exports.bench = bench = ( sName, bLog = yes ) ->
