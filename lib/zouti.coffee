@@ -9,7 +9,7 @@
 "use strict"
 
 crypto = require "crypto"
-clc = require "cli-color"
+chalk = require "chalk"
 
 # Formatted console log, with date, color & context.
 exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
@@ -22,15 +22,15 @@ exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
     sMessage = "[#{ sContext }] #{ sMessage }"
     switch sMessageType.toUpperCase()
         when "ERROR", "ERR", "RED"
-            console.log "#{ sDatePrefix } - #{ clc.red.bold( sMessage ) }"
+            console.log "#{ sDatePrefix } - #{ chalk.red.bold( sMessage ) }"
         when "WARNING", "WARN", "YELLOW"
-            console.log "#{ sDatePrefix } - #{ clc.yellow( sMessage ) }"
+            console.log "#{ sDatePrefix } - #{ chalk.yellow( sMessage ) }"
         when "SUCCESS", "GREEN"
-            console.log "#{ sDatePrefix } - #{ clc.green( sMessage ) }"
+            console.log "#{ sDatePrefix } - #{ chalk.green( sMessage ) }"
         when "MAGENTA"
-            console.log "#{ sDatePrefix } - #{ clc.magenta( sMessage ) }"
+            console.log "#{ sDatePrefix } - #{ chalk.magenta( sMessage ) }"
         else
-            console.log "#{ sDatePrefix } - #{ clc.cyan( sMessage ) }"
+            console.log "#{ sDatePrefix } - #{ chalk.cyan( sMessage ) }"
 
 # Clearing console log messages.
 exports.clearConsole = clearConsole = ->

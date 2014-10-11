@@ -46,6 +46,6 @@
     "matchdep": "^0.3.0"
   },
   "dependencies": {
-    "cli-color": "~0.3"
+    "chalk": "^0.5.1"
   }
 }
