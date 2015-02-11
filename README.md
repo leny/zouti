@@ -76,6 +76,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * **0.0.1**: initial release (05/03/2014)
 * **0.1.0**: refactor `bench` method (08/06/2014)
 * **0.2.0**: add `clearConsole` method (03/10/2014)
+* **0.3.0**: add aliases for `log` method (11/02/2015)
 
 ## License
 Copyright (c) 2014 krkn  
