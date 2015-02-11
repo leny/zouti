@@ -1,4 +1,4 @@
-# zouti 
+# zouti
 
 ![NPM version](http://img.shields.io/npm/v/zouti.svg) ![Dependency Status](https://david-dm.org/krkn/zouti.svg) ![Downloads counter](http://img.shields.io/npm/dm/zouti.svg)
 
@@ -18,14 +18,26 @@ var zouti = require( "zouti" );
 Print a formated console log like below, with date, context between brackets, then message.
 
     5 Mar 22:58:06 - [node] foo
-    
-The `type` parameter is a `String` which can be : 
+
+The `type` parameter is a `String` which can be :
 
 * `"ERROR"`, `"ERR"`, `"RED"` : print the message in red
 * `"WARNING"`, `"WARN"`, `"YELLOW"` : print the message in yellow
 * `"SUCCESS"`, `"GREEN"` : print the message in green
 * `"MAGENTA"` : print the message in magenta
 * every other values prints the message in cyan
+
+### zouti.warning( message, context ), zouti.warn( message, context )
+
+Alias for zouti.log( message, context, "WARNING" )
+
+### zouti.error( message, context ), zouti.notOk( message, context )
+
+Alias for zouti.log( message, context, "ERROR" )
+
+### zouti.success( message, context ), zouti.ok( message, context )
+
+Alias for zouti.log( message, context, "SUCCESS" )
 
 ### zouti.clearConsole()
 
