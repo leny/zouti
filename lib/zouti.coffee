@@ -24,7 +24,6 @@ exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
     sMinutes = if ( iMinutes = dDate.getMinutes() ) < 10 then "0#{ iMinutes }" else iMinutes
     sSeconds = if ( iSeconds = dDate.getSeconds() ) < 10 then "0#{ iSeconds }" else iSeconds
     sDatePrefix = "#{ dDate.getDate() } #{ aMonthName[ dDate.getMonth() ] } #{ sHours }:#{ sMinutes }:#{ sSeconds }"
-    sMessage = "[#{ sContext }] #{ sMessage }"
     switch sMessageType.toUpperCase()
         when ERROR, "ERR", "RED"
             sMessage = "[#{ sContext }] #{ sMessage }"
