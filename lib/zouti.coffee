@@ -11,6 +11,11 @@
 crypto = require "crypto"
 chalk = require "chalk"
 
+# Log formatting constants
+exports.ERROR = ERROR = "ERROR"
+exports.WARNING = WARNING = "WARNING"
+exports.SUCCESS = SUCCESS = "SUCCESS"
+
 # Formatted console log, with date, color & context.
 exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
     aMonthName = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
@@ -21,16 +26,29 @@ exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
     sDatePrefix = "#{ dDate.getDate() } #{ aMonthName[ dDate.getMonth() ] } #{ sHours }:#{ sMinutes }:#{ sSeconds }"
     sMessage = "[#{ sContext }] #{ sMessage }"
     switch sMessageType.toUpperCase()
-        when "ERROR", "ERR", "RED"
+        when ERROR, "ERR", "RED"
+            sMessage = "[#{ sContext }] #{ sMessage }"
             console.log "#{ sDatePrefix } - #{ chalk.red.bold( sMessage ) }"
-        when "WARNING", "WARN", "YELLOW"
+        when WARNING, "WARN", "YELLOW"
+            sMessage = "[#{ sContext }] #{ sMessage }"
             console.log "#{ sDatePrefix } - #{ chalk.yellow( sMessage ) }"
-        when "SUCCESS", "GREEN"
+        when SUCCESS, "GREEN"
+            sMessage = "[#{ sContext }] #{ sMessage }"
             console.log "#{ sDatePrefix } - #{ chalk.green( sMessage ) }"
         when "MAGENTA"
+            sMessage = "[#{ sContext }] #{ sMessage }"
             console.log "#{ sDatePrefix } - #{ chalk.magenta( sMessage ) }"
+        when "INSPECT", "DEBUG"
+            sContext = "[#{ sContext }]"
+            console.log "#{ sDatePrefix } - #{ chalk.cyan( sContext ) }", sMessage
         else
+            sMessage = "[#{ sContext }] #{ sMessage }"
             console.log "#{ sDatePrefix } - #{ chalk.cyan( sMessage ) }"
+
+exports.warn = exports.warning = ( sMessage, sContext ) -> log sMessage, sContext, WARNING
+exports.error = exports.notOk = ( sMessage, sContext ) -> log sMessage, sContext, ERROR
+exports.success = exports.ok = ( sMessage, sContext ) -> log sMessage, sContext, SUCCESS
+exports.inspect = exports.debug = ( sMessage, sContext ) -> log sMessage, sContext, "DEBUG"
 
 # Clearing console log messages.
 exports.clearConsole = clearConsole = ->
