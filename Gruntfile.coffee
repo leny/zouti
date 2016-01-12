@@ -5,38 +5,6 @@ module.exports = ( grunt ) ->
     require( "matchdep" ).filterDev( "grunt-*" ).forEach grunt.loadNpmTasks
 
     grunt.initConfig
-        coffeelint:
-            options:
-                arrow_spacing:
-                    level: "error"
-                camel_case_classes:
-                    level: "error"
-                duplicate_key:
-                    level: "error"
-                indentation:
-                    level: "error"
-                    value: 4
-                max_line_length:
-                    level: "ignore"
-                no_backticks:
-                    level: "error"
-                no_empty_param_list:
-                    level: "error"
-                no_stand_alone_at:
-                    level: "error"
-                no_tabs:
-                    level: "error"
-                no_throwing_strings:
-                    level: "error"
-                no_trailing_semicolons:
-                    level: "error"
-                no_unnecessary_fat_arrows:
-                    level: "error"
-                space_operators:
-                    level: "error"
-            lib:
-                files:
-                    src: [ "lib/zouti.coffee" ]
         coffee:
             options:
                 bare: yes
@@ -62,15 +30,12 @@ module.exports = ( grunt ) ->
             lib:
                 files: "lib/zouti.coffee"
                 tasks: [
-                    "coffeelint"
                     "coffee"
                     "jshint"
                     "bumpup:prerelease"
                 ]
 
     grunt.registerTask "default", [
-        "coffeelint"
         "coffee"
         "jshint"
     ]
-

@@ -1,36 +1,31 @@
 {
   "name": "zouti",
-  "description": "Useful tools & functions we use on every krkn projects.",
+  "description": "Useful tools & functions (loggin' & hashin').",
   "version": "0.3.1",
   "keywords": [
-    "krkn",
     "tools",
     "shortcuts",
-    "toolbox"
+    "toolbox",
+    "log",
+    "hash"
   ],
-  "homepage": "https://github.com/krkn/zouti",
+  "homepage": "https://github.com/leny/zouti",
   "author": {
-    "name": "krkn",
-    "email": "info@krkn.be"
+    "name": "leny",
+    "email": "leny@flatland.be",
+    "url": "http://leny.me"
   },
-  "contributors": [
-    {
-      "name": "leny",
-      "email": "leny@krkn.be",
-      "url": "http://leny.me"
-    }
-  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/krkn/zouti.git"
+    "url": "git://github.com/leny/zouti.git"
   },
   "bugs": {
-    "url": "https://github.com/krkn/zouti/issues"
+    "url": "https://github.com/leny/zouti/issues"
   },
   "licenses": [
     {
       "type": "WTFPL",
-      "url": "https://github.com/krkn/zouti/blob/master/LICENSE"
+      "url": "https://github.com/leny/zouti/blob/master/LICENSE"
     }
   ],
   "main": "lib/zouti",
@@ -39,11 +34,10 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-coffeelint": "0.0.13",
-    "grunt-contrib-coffee": "^0.12.0",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-watch": "^0.6.1",
-    "matchdep": "^0.3.0"
+    "matchdep": "^1.0.0"
   },
   "dependencies": {
     "chalk": "^0.5.1"
