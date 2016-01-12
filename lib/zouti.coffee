@@ -16,6 +16,14 @@ exports.ERROR = ERROR = "ERROR"
 exports.WARNING = WARNING = "WARNING"
 exports.SUCCESS = SUCCESS = "SUCCESS"
 
+# Mute functions
+exports.muted = _bIsMuted = false
+exports.mute = mute = () ->
+    _bIsMuted = true
+
+exports.unmute = mute = () ->
+    _bIsMuted = false
+
 # Formatted console log, with date, color & context.
 exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
     aMonthName = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
@@ -27,22 +35,22 @@ exports.log = log = ( sMessage, sContext = "node", sMessageType = "LOG" ) ->
     switch sMessageType.toUpperCase()
         when ERROR, "ERR", "RED"
             sMessage = "[#{ sContext }] #{ sMessage }"
-            console.log "#{ sDatePrefix } - #{ chalk.red.bold( sMessage ) }"
+            not _bIsMuted and console.log "#{ sDatePrefix } - #{ chalk.red.bold( sMessage ) }"
         when WARNING, "WARN", "YELLOW"
             sMessage = "[#{ sContext }] #{ sMessage }"
-            console.log "#{ sDatePrefix } - #{ chalk.yellow( sMessage ) }"
+            not _bIsMuted and console.log "#{ sDatePrefix } - #{ chalk.yellow( sMessage ) }"
         when SUCCESS, "GREEN"
             sMessage = "[#{ sContext }] #{ sMessage }"
-            console.log "#{ sDatePrefix } - #{ chalk.green( sMessage ) }"
+            not _bIsMuted and console.log "#{ sDatePrefix } - #{ chalk.green( sMessage ) }"
         when "MAGENTA"
             sMessage = "[#{ sContext }] #{ sMessage }"
-            console.log "#{ sDatePrefix } - #{ chalk.magenta( sMessage ) }"
+            not _bIsMuted and console.log "#{ sDatePrefix } - #{ chalk.magenta( sMessage ) }"
         when "INSPECT", "DEBUG"
             sContext = "[#{ sContext }]"
-            console.log "#{ sDatePrefix } - #{ chalk.cyan( sContext ) }", sMessage
+            not _bIsMuted and console.log "#{ sDatePrefix } - #{ chalk.cyan( sContext ) }", sMessage
         else
             sMessage = "[#{ sContext }] #{ sMessage }"
-            console.log "#{ sDatePrefix } - #{ chalk.cyan( sMessage ) }"
+            not _bIsMuted and console.log "#{ sDatePrefix } - #{ chalk.cyan( sMessage ) }"
 
 exports.warn = exports.warning = ( sMessage, sContext ) -> log sMessage, sContext, WARNING
 exports.error = exports.notOk = ( sMessage, sContext ) -> log sMessage, sContext, ERROR
@@ -51,7 +59,7 @@ exports.inspect = exports.debug = ( sMessage, sContext ) -> log sMessage, sConte
 
 # Clearing console log messages.
 exports.clearConsole = clearConsole = ->
-    console.log "\u001B[2J\u001B[0;0f"
+    not _bIsMuted and console.log "\u001B[2J\u001B[0;0f"
 
 # Simple bench tools for console.
 oBenches = {}
