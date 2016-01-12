@@ -39,6 +39,20 @@ Alias for zouti.log( message, context, "ERROR" )
 
 Alias for zouti.log( message, context, "SUCCESS" )
 
+### zouti.mute()
+
+Muting **zouti** by disable all the console.log calls until `zouti.unmute()` is called.
+> **Note:** if zouti is already muted, does nothing.
+
+### zouti.unmute()
+
+Unmute **zouti**.
+> **Note:** if zouti is already unmuted, does nothing.
+
+### zouti.muted
+
+Property returning a `boolean`, indicating the mute status of **zouti**.
+
 ### zouti.clearConsole()
 
 Clear the console by sending the string `\u001B[2J\u001B[0;0f` to it.
