@@ -92,8 +92,8 @@ doNothing = ->
     return
 
 exports.sleep = sleep = ( iDuration ) ->
-    dEnd = ( new Date() ).getTime() + ( 1000 * iDuration )
-    while ( new Date() ).getTime() <= dEnd
+    dEnd = Date.now() + ( 1000 * iDuration )
+    while Date.now() <= dEnd
         doNothing()
 
 # Misc hashing functions.
