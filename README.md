@@ -39,6 +39,10 @@ Alias for zouti.log( message, context, "ERROR" )
 
 Alias for zouti.log( message, context, "SUCCESS" )
 
+### zouti.spacer( amount )
+
+Print `amount` (defaults to `1`) empty console lines, as visual spacer.
+
 ### zouti.mute()
 
 Muting **zouti** by disable all the console.log calls until `zouti.unmute()` is called.
@@ -91,7 +95,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * **0.1.0**: refactor `bench` method (08/06/2014)
 * **0.2.0**: add `clearConsole` method (03/10/2014)
 * **0.3.0**: add aliases for `log` method (11/02/2015)
+* **0.4.0**: add `mute` and `unmute` methods (12/01/2016)
+* **0.5.0**: add `spacer` method (24/05/2016)
 
 ## License
-Copyright (c) 2014 krkn  
+Copyright (c) 2014 [leny](https://github.com/leny) & [krkn](https://github.com/krkn)  
 Licensed under the WTFPL license.

@@ -61,6 +61,12 @@ exports.inspect = exports.debug = ( sMessage, sContext ) -> log sMessage, sConte
 exports.clearConsole = clearConsole = ->
     not _bIsMuted and console.log "\u001B[2J\u001B[0;0f"
 
+# Spacer (print empty console log messages to create visual spaces)
+exports.spacer = spacer = ( iAmount = 1 ) ->
+    iAmount = 1 if ( isNaN iAmount = +iAmount )
+    do console.log while iAmount--
+    return
+
 # Simple bench tools for console.
 oBenches = {}
 exports.bench = bench = ( sName, bLog = yes ) ->
