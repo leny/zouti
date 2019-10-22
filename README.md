@@ -1,6 +1,6 @@
 # zouti
 
-![NPM version](http://img.shields.io/npm/v/zouti.svg) ![Dependency Status](https://david-dm.org/krkn/zouti.svg) ![Downloads counter](http://img.shields.io/npm/dm/zouti.svg)
+![NPM version](http://img.shields.io/npm/v/zouti.svg) ![Dependency Status](https://david-dm.org/krkn/zouti.svg) ![Downloads counter](http://img.shields.io/npm/dm/zouti.svg) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Useful tools & functions we use on every krkn projects.
 
